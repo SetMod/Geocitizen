@@ -84,9 +84,9 @@ replace 8081 with 8080 in port variable (next after host var)
 
 ## Install and use psql on CentOS: 
 
-    - `sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"`
-    - `sudo -u postgres psql -c 'create database ss_demo_1;'`
-    - `sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE ss_demo_1 TO postgres;"`
+    `sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"`
+    `sudo -u postgres psql -c 'create database ss_demo_1;'`
+    `sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE ss_demo_1 TO postgres;"`
 
 ## Check DB connection
 
