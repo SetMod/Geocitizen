@@ -84,44 +84,44 @@ replace 8081 with 8080 in port variable (next after host var)
 
 ## Install and use psql on CentOS: 
 
-- `sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"`
-- `sudo -u postgres psql -c 'create database ss_demo_1;'`
-- `sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE ss_demo_1 TO postgres;"`
+    - `sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"`
+    - `sudo -u postgres psql -c 'create database ss_demo_1;'`
+    - `sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE ss_demo_1 TO postgres;"`
 
 ## Check DB connection
 
 DB is on CentOS. Check from Ubuntu which is tomcat server:
 
 - Install postgres on Ubuntu ([link](https://www.postgresql.org/download/linux/ubuntu/)):
-`sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt  $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'`
-`wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -`
-`sudo apt-get update`
-`sudo apt-get -y install postgresql`
-`psql -h {DB_ip} postgres -d ss_demo_1` - connect to database ss_demo_1 by user postgres on ip DB_ip
-
+    `sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt  $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'`
+    `wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -`
+    `sudo apt-get update`
+    `sudo apt-get -y install postgresql`
+    `psql -h {DB_ip} postgres -d ss_demo_1` - connect to database ss_demo_1 by user postgres on ip DB_ip
+    
 ## Other useful commands and links
 
 Download pgAdmin4 v5.5 for Windows: https://www.postgresql.org/ftp/pgadmin/pgadmin4/v5.5/windows/
 
 - For Ubuntu
-npm cache clean --force
-sudo ufw allow
-sudo ufw enable
-sudo ufw status verbose
-Tomcat: 
-https://linuxhint.com/install_apache_tomcat_server_ubuntu/
-or 
-Use https://downloads.apache.org/tomcat/tomcat-9/v9.0.52/bin/apache-tomcat-9.0.52.tar.gz in https://linuxize.com/post/how-to-install-tomcat-9-on-ubuntu-20-04/
-Open port:
-sudo ufw allow from any to any port 8080 proto tcp
-Ping host from text web-browser:
-sudo apt install w3m
-w3m http://127.0.0.1:8080/ 
+    npm cache clean --force
+    sudo ufw allow
+    sudo ufw enable
+    sudo ufw status verbose
+    Tomcat: 
+    https://linuxhint.com/install_apache_tomcat_server_ubuntu/
+    or 
+    Use https://downloads.apache.org/tomcat/tomcat-9/v9.0.52/bin/apache-tomcat-9.0.52.tar.gz in https://linuxize.com/post/how-to-install-tomcat-9-on-ubuntu-20-04/
+    Open port:
+    sudo ufw allow from any to any port 8080 proto tcp
+    Ping host from text web-browser:
+    sudo apt install w3m
+    w3m http://127.0.0.1:8080/ 
 
-https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart-ru
+    https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart-ru
 
 - For CentOS
-sudo -u postgres psql\q\conninfo
-“FirewallD is not running”:  https://stackoverflow.com/questions/63085297/firewalld-is-not-running
-https://winitpro.ru/index.php/2019/09/26/ustanovka-postgresql-db-centos/
-https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-centos-7
+    sudo -u postgres psql\q\conninfo
+    “FirewallD is not running”:  https://stackoverflow.com/questions/63085297/firewalld-is-not-running
+    https://winitpro.ru/index.php/2019/09/26/ustanovka-postgresql-db-centos/
+    https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-centos-7
