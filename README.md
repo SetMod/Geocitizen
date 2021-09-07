@@ -23,30 +23,32 @@ sudo systemctl restart tomcat9
 
 ## Download code
 
-git clone git@github.com:DevOpsAcademySS/Geocitizen.git - clone repositorycd Geocitizen - go to repo foldergit -b checkout A-72-kateryna-manual-deploy-geocitizen - switch to branch of the ticket
+`git clone git@github.com:DevOpsAcademySS/Geocitizen.git` - clone repository
+`cd Geocitizen` - go to repo folder
+`git -b checkout A-72-kateryna-manual-deploy-geocitizen` - switch to branch of the ticket
 
 ## Install packages
 
-*node (v10.19.0)*
+- *node (v10.19.0)*
 `sudo apt update`
 `sudo apt install nodejs`
 `nodejs -v / node -v`
 
-*npm (v6.14.4)*
+- *npm (v6.14.4)*
 `sudo apt update`
 `sudo apt install npm`
 `npm -v`
 
-*maven (v3.6.3, Java version: 11.0.11)*
+- *maven (v3.6.3, Java version: 11.0.11)*
 `sudo apt update`
 `sudo apt install maven`
 `mvn -version`
 
-*java (v11.0.11) ([link](https://linuxize.com/post/how-to-install-tomcat-9-on-ubuntu-20-04/))*
+- *java (v11.0.11) ([link](https://linuxize.com/post/how-to-install-tomcat-9-on-ubuntu-20-04/))*
 `sudo apt install openjdk-11-jdk`
 `sudo useradd -m -U -d /opt/tomcat -s /bin/false tomcat`
 
-*tomcat (v9) (same [link](https://linuxize.com/post/how-to-install-tomcat-9-on-ubuntu-20-04/))*
+- *tomcat (v9) (same [link](https://linuxize.com/post/how-to-install-tomcat-9-on-ubuntu-20-04/))*
 `sudo apt install tomcat9 tomcat9-admin`
 `sudo systemctl enable tomcat9`
 `sudo systemctl status tomcat9`
@@ -69,29 +71,28 @@ If you want to make changes to frontend you have to cd to ~/Ch-058/front-end d
 
 **bug**: in pom.xml: change ‘http’ to ‘https’ in <repositories><repository><url>.
 
-In src/main/resources/application.properties:
+- In src/main/resources/application.properties:
 replace ‘localhost’ with ip-address (where project is deploying) in variables front.url and front-end.url.
 and replace ‘localhost’ with ip-address (where database is deployed) in variable db.url.
 
-In front-end/src/main.js:
+- In front-end/src/main.js:
 replace 'localhost' with tomcat's ip (where project is deploying) in export const backEndUrl
 
-In front-end/config/index.js:
+- In front-end/config/index.js:
 replace 'localhost' with tomcat's ip in host variable;
 replace 8081 with 8080 in port variable (next after host var)
 
 ## Install and use psql on CentOS: 
 
-`sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"`
-`sudo -u postgres psql -c 'create database ss_demo_1;'`
-`sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE ss_demo_1 TO postgres;"`
+- `sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"`
+- `sudo -u postgres psql -c 'create database ss_demo_1;'`
+- `sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE ss_demo_1 TO postgres;"`
 
 ## Check DB connection
 
 DB is on CentOS. Check from Ubuntu which is tomcat server:
 
-Install postgres on Ubuntu ([link](https://www.postgresql.org/download/linux/ubuntu/)):
-
+- Install postgres on Ubuntu ([link](https://www.postgresql.org/download/linux/ubuntu/)):
 `sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt  $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'`
 `wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -`
 `sudo apt-get update`
@@ -102,7 +103,7 @@ Install postgres on Ubuntu ([link](https://www.postgresql.org/download/linux/ubu
 
 Download pgAdmin4 v5.5 for Windows: https://www.postgresql.org/ftp/pgadmin/pgadmin4/v5.5/windows/
 
-For Ubuntu
+- For Ubuntu
 npm cache clean --force
 sudo ufw allow
 sudo ufw enable
@@ -119,7 +120,7 @@ w3m http://127.0.0.1:8080/
 
 https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart-ru
 
-For CentOS
+- For CentOS
 sudo -u postgres psql\q\conninfo
 “FirewallD is not running”:  https://stackoverflow.com/questions/63085297/firewalld-is-not-running
 https://winitpro.ru/index.php/2019/09/26/ustanovka-postgresql-db-centos/
