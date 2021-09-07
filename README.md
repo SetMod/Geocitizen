@@ -21,11 +21,11 @@ sudo systemctl restart tomcat9
 - To check database for changes, do:
     psql -h 192.168.1.152 postgres -d ss_demo_1
 
-#### Download code
+## Download code
 
 git clone git@github.com:DevOpsAcademySS/Geocitizen.git - clone repositorycd Geocitizen - go to repo foldergit -b checkout A-72-kateryna-manual-deploy-geocitizen - switch to branch of the ticket
 
-#### Install packages
+## Install packages
 
 *node (v10.19.0)*
 `sudo apt update`
@@ -52,7 +52,7 @@ git clone git@github.com:DevOpsAcademySS/Geocitizen.git - clone repositorycd Geo
 `sudo systemctl status tomcat9`
 `sudo systemctl restart tomcat9`
 
-#### Bugs:
+## Bugs:
 
 1. If there is no login button in right top of site, in front-end/package.json:
 replace "vue-router": "^3.0.1"
@@ -65,7 +65,7 @@ with "vue-material": "1.0.0-beta-8"
 Note:
 If you want to make changes to frontend you have to cd to ~/Ch-058/front-end dir and run npm run dev. After successful execution you'll see url.
 
-#### Edit some properties (optionally)
+## Edit some properties (optionally)
 
 **bug**: in pom.xml: change ‘http’ to ‘https’ in <repositories><repository><url>.
 
@@ -80,13 +80,13 @@ In front-end/config/index.js:
 replace 'localhost' with tomcat's ip in host variable;
 replace 8081 with 8080 in port variable (next after host var)
 
-#### Install and use psql on CentOS: 
+## Install and use psql on CentOS: 
 
 `sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"`
 `sudo -u postgres psql -c 'create database ss_demo_1;'`
 `sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE ss_demo_1 TO postgres;"`
 
-#### Check DB connection
+## Check DB connection
 
 DB is on CentOS. Check from Ubuntu which is tomcat server:
 
@@ -98,7 +98,7 @@ Install postgres on Ubuntu ([link](https://www.postgresql.org/download/linux/ubu
 `sudo apt-get -y install postgresql`
 `psql -h {DB_ip} postgres -d ss_demo_1` - connect to database ss_demo_1 by user postgres on ip DB_ip
 
-#### Other useful commands and links
+## Other useful commands and links
 
 Download pgAdmin4 v5.5 for Windows: https://www.postgresql.org/ftp/pgadmin/pgadmin4/v5.5/windows/
 
